@@ -1,23 +1,28 @@
-# algorithms.py
-
-
 def dda(x0, y0, x1, y1):
-    # DDA line algorithm
+    """
+    Implements the DDA (Digital Differential Analyzer) line algorithm.
+
+    Args:
+        x0 (float): The x-coordinate of the starting point.
+        y0 (float): The y-coordinate of the starting point.
+        x1 (float): The x-coordinate of the ending point.
+        y1 (float): The y-coordinate of the ending point.
+
+    Returns:
+        list: A list of points representing the line.
+
+    """
     points = []
 
-    # distance between points
     dx = x1 - x0
     dy = y1 - y0
 
-    # number of steps gets decided by the bigger of variations
     steps = abs(dx) if abs(dx) > abs(dy) else abs(dy)
 
-    # if dx is bigger, x_increment equals 1, otherwise y_increment equals 1
     x_increment = dx / float(steps)
     y_increment = dy / float(steps)
     x, y = x0, y0
 
-    # start populating point vector
     points.append((round(x), round(y)))
     for _ in range(steps):
         x += x_increment
@@ -27,7 +32,20 @@ def dda(x0, y0, x1, y1):
 
 
 def bresenham(x0, y0, x1, y1):
-    # Bresenham's line algorithm
+    """
+    Implements the Bresenham's line algorithm to generate a list of points
+    between two given points (x0, y0) and (x1, y1) in a 2D space.
+
+    Args:
+        x0 (int): The x-coordinate of the starting point.
+        y0 (int): The y-coordinate of the starting point.
+        x1 (int): The x-coordinate of the ending point.
+        y1 (int): The y-coordinate of the ending point.
+
+    Returns:
+        list: A list of points representing the line between the two given points.
+
+    """
     points = []
     dx = abs(x1 - x0)
     dy = abs(y1 - y0)
@@ -56,20 +74,31 @@ def bresenham(x0, y0, x1, y1):
     return points
 
 
-def bresenham_circle(xc, yc, r):
-    # Bresenham's circle algorithm
+def bresenham_circle(x_center, y_center, r):
+    """
+    Generates a list of points that form a circle using the Bresenham's circle algorithm.
+
+    Args:
+        x_center (int): The x-coordinate of the center of the circle.
+        y_center (int): The y-coordinate of the center of the circle.
+        r (int): The radius of the circle.
+
+    Returns:
+        list: A list of points that form the circle.
+
+    """
     points = []
     x, y = 0, r
     d = 3 - 2 * r
     while x <= y:
-        points.append((xc + x, yc + y))
-        points.append((xc + x, yc - y))
-        points.append((xc - x, yc + y))
-        points.append((xc - x, yc - y))
-        points.append((xc + y, yc + x))
-        points.append((xc + y, yc - x))
-        points.append((xc - y, yc + x))
-        points.append((xc - y, yc - x))
+        points.append((x_center + x, y_center + y))
+        points.append((x_center + x, y_center - y))
+        points.append((x_center - x, y_center + y))
+        points.append((x_center - x, y_center - y))
+        points.append((x_center + y, y_center + x))
+        points.append((x_center + y, y_center - x))
+        points.append((x_center - y, y_center + x))
+        points.append((x_center - y, y_center - x))
         if d < 0:
             d += 4 * x + 6
         else:

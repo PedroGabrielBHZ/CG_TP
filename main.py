@@ -1,4 +1,3 @@
-# main.py
 from tkinter import Tk
 from windows import MainWindow
 
