@@ -74,7 +74,7 @@ def bresenham(x0, y0, x1, y1):
     return points
 
 
-def bresenham_circle(x_center, y_center, r):
+def bresenhamCircle(x_center, y_center, r):
     """
     Generates a list of points that form a circle using the Bresenham's circle algorithm.
 

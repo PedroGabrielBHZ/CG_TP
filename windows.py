@@ -1,5 +1,5 @@
 from tkinter import Frame, Button, Canvas, Entry, StringVar, Label
-from algorithms import bresenham, bresenham_circle, dda
+from algorithms import bresenham, bresenhamCircle, dda
 
 pixel_size = 2
 
@@ -81,23 +81,23 @@ class MainWindow(Frame):
 
         # Bresenham Button
         self.bresenham_button = Button(
-            self, text="Show Bresenham", command=self.show_bresenham
+            self, text="Show Bresenham", command=self.showBresenham
         )
         self.bresenham_button.grid(column=1, row=0)
 
         # DDA Button
-        self.dda_button = Button(self, text="Show DDA", command=self.show_dda)
+        self.dda_button = Button(self, text="Show DDA", command=self.showDDA)
         self.dda_button.grid(column=1, row=1)
 
         # Bresenham Circle Button
         self.bresenham_circle_button = Button(
-            self, text="Show Bresenham Circle", command=self.show_bresenham_circle
+            self, text="Show Bresenham Circle", command=self.displayBresenhamCircle
         )
         self.bresenham_circle_button.grid(row=3, column=1)
 
         # Set Viewport Button
         self.set_viewport_button = Button(
-            self, text="Set Viewport", command=self.set_viewport
+            self, text="Set Viewport", command=self.setViewport
         )
         self.set_viewport_button.grid(row=5, column=1)
 
@@ -105,7 +105,7 @@ class MainWindow(Frame):
         self.clear_button = Button(self, text="Clear", command=self.clear)
         self.clear_button.grid(column=1, row=2)
 
-    def show_bresenham(self):
+    def showBresenham(self):
         """
         Draws a line using the Bresenham's line algorithm.
 
@@ -127,7 +127,7 @@ class MainWindow(Frame):
                 x, y, x + pixel_size, y + pixel_size, fill="black"
             )
 
-    def show_dda(self):
+    def showDDA(self):
         """
         Draws a line using the DDA (Digital Differential Analyzer) algorithm.
 
@@ -146,7 +146,7 @@ class MainWindow(Frame):
                 x, y, x + pixel_size, y + pixel_size, fill="blue", outline="blue"
             )
 
-    def show_bresenham_circle(self):
+    def displayBresenhamCircle(self):
         """
         Draws a circle using the Bresenham's algorithm.
 
@@ -157,15 +157,15 @@ class MainWindow(Frame):
         Returns:
             None
         """
-        x_center, y_center, r = self.get_circle_parameters()
-        pixels = bresenham_circle(x_center, y_center, r)
+        x_center, y_center, r = self.getCircleParameters()
+        pixels = bresenhamCircle(x_center, y_center, r)
         for pixel in pixels:
             x, y = pixel
             self.canvas.create_rectangle(
                 x, y, x + pixel_size, y + pixel_size, fill="black"
             )
 
-    def get_circle_parameters(self):
+    def getCircleParameters(self):
         """
         Get the parameters of a circle.
 
@@ -254,7 +254,7 @@ class MainWindow(Frame):
             self.x1_var.set("")
             self.y1_var.set("")
 
-    def set_viewport(self):
+    def setViewport(self):
         """
         Toggles the viewport setting mode.
 
