@@ -7,7 +7,6 @@ class Application(Tk):
     def __init__(self):
         Tk.__init__(self)
         self.title("Computer Graphics Showcase")
-        self.geometry("800x900")
         MainWindow(self)
 
 
