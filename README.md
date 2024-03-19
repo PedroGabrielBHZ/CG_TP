@@ -1,29 +1,38 @@
 # Computer Graphics Showcase
 
-This project is a simple GUI application that demonstrates the use of two fundamental computer graphics algorithms: Bresenham's line algorithm and the Digital Differential Analyzer (DDA) line algorithm.
+This project is a showcase of algorithms for drawing computer graphics primitives implemented in Python. It uses the Tkinter library for the graphical user interface.
 
 ## Features
 
-- Draw lines using Bresenham's line algorithm
-- Draw lines using the DDA line algorithm
-- Clear the canvas
+- Line drawing using Bresenham's algorithm and DDA
+- Circle drawing using Bresenham's algorithm
+- Line clipping using Cohen-Sutherland and Liang-Barsky algorithms
+- Geometric transformations (translation, rotation, scaling)
 
-## How to Run
+## Installation
 
-1. Ensure you have Python 3 installed.
-2. Clone this repository.
-3. Run `main.py`:
+1. Clone the repository:
 
-```sh
-python main.py
-```
+    ```sh
+    git clone https://github.com/yourusername/computer-graphics-showcase.git
+    cd computer-graphics-showcase
+    ```
 
-## Usage
+2. Create and activate a virtual environment:
 
-Enter the coordinates for the start and end points of the line in the input fields and click either "Show Bresenham" or "Show DDA" to draw the line using the respective algorithm. Click "Clear" to clear the canvas.
+    ```sh
+    python -m venv venv
+    source venv/bin/activate
+    ```
 
-## Files
+3. Install the required python packages:
 
-- `main.py`: The entry point of the application.
-- `windows.py`: Contains the `MainWindow` class, which is responsible for creating the GUI.
-- `algorithms.py`: Contains the implementations of Bresenham's line algorithm and the DDA line algorithm.
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+4. Run the application:
+
+    ```sh
+    python main.py
+    ```
