@@ -4,7 +4,9 @@ from tkinter import messagebox
 from algorithms import *
 import numpy as np
 
-pixel_size = 1
+PIXEL_SIZE = 1
+WIDTH = 800
+HEIGHT = 600
 
 
 class MainWindow(Frame):
@@ -27,7 +29,7 @@ class MainWindow(Frame):
         Returns:
             None
         """
-        self.canvas = Canvas(self, width=800, height=600, bg="white")
+        self.canvas = Canvas(self, width=WIDTH, height=HEIGHT, bg="white")
         self.canvas.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
         self.canvas.bind("<Button-1>", self.on_canvas_click)
 
@@ -271,7 +273,7 @@ class MainWindow(Frame):
             for pixel in pixels:
                 x, y = pixel
                 self.canvas.create_rectangle(
-                    x, y, x + pixel_size, y + pixel_size, fill="green"
+                    x, y, x + PIXEL_SIZE, y + PIXEL_SIZE, fill="green"
                 )
 
         except Exception as e:
@@ -316,7 +318,7 @@ class MainWindow(Frame):
             for pixel in pixels:
                 x, y = pixel
                 self.canvas.create_rectangle(
-                    x, y, x + pixel_size, y + pixel_size, fill="green"
+                    x, y, x + PIXEL_SIZE, y + PIXEL_SIZE, fill="green"
                 )
 
         except Exception as e:
@@ -342,7 +344,7 @@ class MainWindow(Frame):
             for pixel in pixels:
                 x, y = pixel
                 self.canvas.create_rectangle(
-                    x, y, x + pixel_size, y + pixel_size, fill="black"
+                    x, y, x + PIXEL_SIZE, y + PIXEL_SIZE, fill="black"
                 )
         except Exception as e:
             messagebox.showerror("Error", str(e))
@@ -364,7 +366,7 @@ class MainWindow(Frame):
             for pixel in pixels:
                 x, y = pixel
                 self.canvas.create_rectangle(
-                    x, y, x + pixel_size, y + pixel_size, fill="blue", outline="blue"
+                    x, y, x + PIXEL_SIZE, y + PIXEL_SIZE, fill="blue", outline="blue"
                 )
         except Exception as e:
             messagebox.showerror("Error", str(e))
@@ -386,7 +388,7 @@ class MainWindow(Frame):
             for pixel in pixels:
                 x, y = pixel
                 self.canvas.create_rectangle(
-                    x, y, x + pixel_size, y + pixel_size, fill="green", outline="green"
+                    x, y, x + PIXEL_SIZE, y + PIXEL_SIZE, fill="green", outline="green"
                 )
         except Exception as e:
             messagebox.showerror("Error", str(e))
@@ -471,7 +473,7 @@ class MainWindow(Frame):
             for pixel in pixels:
                 x, y = pixel
                 self.canvas.create_rectangle(
-                    x, y, x + pixel_size, y + pixel_size, fill="red"
+                    x, y, x + PIXEL_SIZE, y + PIXEL_SIZE, fill="red"
                 )
         except Exception as e:
             messagebox.showerror("Error", str(e))
@@ -504,7 +506,7 @@ class MainWindow(Frame):
             for pixel in pixels:
                 x, y = pixel
                 self.canvas.create_rectangle(
-                    x, y, x + pixel_size, y + pixel_size, fill="red"
+                    x, y, x + PIXEL_SIZE, y + PIXEL_SIZE, fill="red"
                 )
         except Exception as e:
             messagebox.showerror("Error", str(e))
