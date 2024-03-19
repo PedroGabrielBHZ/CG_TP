@@ -14,7 +14,7 @@ This project is a showcase of algorithms for drawing computer graphics primitive
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/yourusername/computer-graphics-showcase.git
+    git clone https://github.com/PedroGabrielBHZ/CG_TP
     cd computer-graphics-showcase
     ```
 
